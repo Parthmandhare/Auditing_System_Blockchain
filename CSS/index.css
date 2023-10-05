@@ -25,8 +25,18 @@
     font-size: 15px;
     color: aliceblue;
 }
+.btn_login a{
+    text-decoration: none;
+    color: white;
+}
+
+.btn_login a:hover{
+    text-decoration: none;
+    color: white;
+}
 .tag_line{
     margin-top: 30px;
+    width: 380px;
 }
 
 
@@ -173,6 +183,60 @@ body{margin-top:20px;
         padding-left: 0 !important
     }
 
-#section_2{
-    margin-top: 50px;
+#section_3{
+    margin-top: 150px;
+    margin-bottom: 150px;
+    font-family: 'Roboto', sans-serif;
+}
+
+#feature_1{
+    width: 555px;
+    margin-right: 205px;
+    font-family: 'Roboto', sans-serif;
+}
+#feature_2{
+    width: 545px;
+    margin-left: 205px;
+    font-family: 'Roboto', sans-serif;
+}
+#feature_3{
+    width: 540px;
+    margin-right: 205px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.tag_line1 {
+    margin-top: 200px;
+    width: 400px;
+    font-family: 'Roboto', sans-serif;
+}
+.tag_line2 {
+    margin-top: 150px;
+    width: 450px;
+    font-family: 'Roboto', sans-serif;
+}
+.tag_line3 {
+    margin-top: 200px;
+    width: 450px;
+    font-family: 'Roboto', sans-serif;
+}
+#secontion_2_1{
+    margin-top: 100px;
+    font-family: 'Roboto', sans-serif;
+}
+
+#sec_1_1{
+    width: 250px;
+    /* background-color: red; */
+    
+}
+.tag_line1_1{
+    font-weight: 600;
+    font-size: 18px;
+}
+
+#nav_link :hover{
+    font-size: 17px;
+    text-decoration:underline;
+    color: #B24CC2;
 }

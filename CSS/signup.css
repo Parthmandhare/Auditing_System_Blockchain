@@ -1,0 +1,94 @@
+/* Reset some default styles to ensure consistency */
+body, h1, p, label, input, select, button {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', Arial, sans-serif; /* Set the font-family to Poppins */
+    background: #9053c7;
+    background: -webkit-linear-gradient(-135deg, #c850c0, #4158d0);
+    background: -o-linear-gradient(-135deg, #c850c0, #4158d0);
+    background: -moz-linear-gradient(-135deg, #c850c0, #4158d0);
+    background: linear-gradient(-135deg, #c850c0, #4158d0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Ensure the page covers the full viewport height */
+}
+
+.container {
+    width: 100%;
+    max-width: 600px; /* Increase the max-width to make the box bigger */
+    margin: 0 auto;
+    padding: 16px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 20px; /* Adding curved corners */
+
+
+}
+
+
+h1 {
+    font-family: 'Poppins', Arial, sans-serif; /* Set the font-family to Poppins */
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Update the CSS for text input fields */
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"], select{
+    width: 100%;
+    padding: 4px;
+    margin-bottom: 15px;
+    font-family: 'Poppins', Arial, sans-serif;
+    border: none; /* Remove the border */
+    border-bottom: 1px solid #9053c7; /* Add a bottom border */
+    background: transparent; /* Remove background color if needed */
+    
+}
+
+/* Update the CSS for the select element */
+select {
+    height: 35px;
+    /* border: 1px solid #999999; */
+    border-radius: 10px;
+    /* background-color: #d4d3d3; */
+}
+
+
+.button-container {
+    text-align: center; /* Center the button horizontally */
+}
+
+button {
+    background-color: #57b846;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Poppins', Arial, sans-serif; /* Set the font-family to Poppins */
+    
+}
+
+button:hover {
+    background-color: #141414;
+}
+
+p {
+    margin-top: 10px;
+    font-family: 'Poppins', Arial, sans-serif; /* Set the font-family to Poppins */
+    font-size: smaller;
+}
