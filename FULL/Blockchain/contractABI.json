@@ -1,0 +1,336 @@
+[
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_newAuditor",
+				"type": "address"
+			}
+		],
+		"name": "addAuditor",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_projectPlan",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_expenseBreakdown",
+				"type": "string"
+			},
+			{
+				"components": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "link",
+						"type": "string"
+					}
+				],
+				"internalType": "struct AuditContract.Document[]",
+				"name": "_documentLinks",
+				"type": "tuple[]"
+			}
+		],
+		"name": "storeContractorDetails",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_contractorName",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_contractorEmail",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_projectName",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_projectDescription",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_projectLocation",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_totalDuration",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_totalBudget",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "_additionalInfo",
+				"type": "string"
+			}
+		],
+		"name": "storeProjectInfo",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "auditors",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "auditReports",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "auditor",
+				"type": "address"
+			},
+			{
+				"internalType": "string",
+				"name": "auditRemarks",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getDocumentLinks",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "link",
+						"type": "string"
+					}
+				],
+				"internalType": "struct AuditContract.Document[]",
+				"name": "",
+				"type": "tuple[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getProjectDetails",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "contractorName",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "contractorEmail",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "projectName",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "projectDescription",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "projectLocation",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "totalDuration",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "totalBudget",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "additionalInfo",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_address",
+				"type": "address"
+			}
+		],
+		"name": "isAuditor",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "projectDocuments",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "name",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "link",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "projects",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "contractorName",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "contractorEmail",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "projectName",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "projectDescription",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "projectLocation",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "totalDuration",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "totalBudget",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "additionalInfo",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "projectPlan",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "expenseBreakdown",
+				"type": "string"
+			},
+			{
+				"internalType": "enum AuditContract.ProjectStatus",
+				"name": "status",
+				"type": "uint8"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	}
+]

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sign Up</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="container">
+        <h1>Sign Up</h1>
+        <form id="signup-form" action="login.html"  method="POST">
+            <label for="name">Name *</label>
+            <input type="text" id="name" name="name" >
+            
+            <label for="email">E-Mail *</label>
+            <input type="email" id="email" name="email">
+
+            <label for="phone">Phone Number *</label>
+            <input type="tel" id="phone" name="phone">
+            
+            <label for="dglocker">DG Locker ID *</label>
+            <input type="text" id="dglocker" name="dglocker">
+
+            <label for="username">Username *</label>
+            <input type="text" id="username" name="username" >
+            
+            <label for="password">Set Password *</label>
+            <input type="password" id="password" name="password">
+            
+            <label for="role">Role *</label>
+            <select id="role" name="role">
+                <option value="" disabled selected>Select Role</option>
+                <option value="Govt. Body">Govt. Body</option>
+                <option value="Contractor">Contractor</option>
+                <option value="Auditor">Auditor</option>
+            </select>
+
+            <div id="govtBodyFields" style="display: none;">
+                <label for="district">District *</label>
+                <input type="text" id="district" name="district">
+
+                <label for="villageCity">Village/City *</label>
+                <input type="text" id="villageCity" name="villageCity">
+
+                <label for="officeID">Office ID *</label>
+                <input type="text" id="officeID" name="officeID">
+
+                <label for="govtID">Govt. ID *</label>
+                <input type="text" id="govtID" name="govtID">
+            </div>
+
+            <div id="contractorFields" style="display: none;">
+                <label for="companyName">Company Name *</label>
+                <input type="text" id="companyName" name="companyName">
+
+                <label for="gstNumber">GST Number *</label>
+                <input type="text" id="gstNumber" name="gstNumber">
+            </div>
+
+            <div id="auditorFields" style="display: none;">
+                <label for="employeeID">Employee ID *</label>
+                <input type="text" id="employeeID" name="employeeID">
+            </div>
+            
+            <div class="button-container">
+                <button type="submit">Sign Up</button>
+            </div>
+        </form>
+        <p>Already have an account? <a href="http://localhost:8080/loginsignup/login.html">Log in</a></p>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-database.js"></script>
+<script src="firebaseConfig.js"></script>
+<script src="signup.js"></script>
+
+
+<script>
+    // Function to show/hide role-specific fields based on the selected role
+    function toggleRoleFields() {
+        var roleSelect = document.getElementById("role");
+        var govtBodyFields = document.getElementById("govtBodyFields");
+        var contractorFields = document.getElementById("contractorFields");
+        var auditorFields = document.getElementById("auditorFields");
+
+        govtBodyFields.style.display = "none";
+        contractorFields.style.display = "none";
+        auditorFields.style.display = "none";
+
+        var selectedRole = roleSelect.value;
+
+        if (selectedRole === "Govt. Body") {
+            govtBodyFields.style.display = "block";
+        } else if (selectedRole === "Contractor") {
+            contractorFields.style.display = "block";
+        } else if (selectedRole === "Auditor") {
+            auditorFields.style.display = "block";
+        }
+    }
+
+    // Attach the function to the onchange event of the role select element
+    var roleSelect = document.getElementById("role");
+    roleSelect.addEventListener("change", toggleRoleFields);
+
+    // Call the function initially to handle the default state
+    toggleRoleFields();
+</script>
+</body>
+
+
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Auditor Dashboard</title>
+    <style>
+body {
+    background: #9053c7;
+    background: -webkit-linear-gradient(-135deg, #c850c0, #4158d0);
+    background: -o-linear-gradient(-135deg, #c850c0, #4158d0);
+    background: -moz-linear-gradient(-135deg, #c850c0, #4158d0);
+    background: linear-gradient(-135deg, #c850c0, #4158d0);
+    margin: 0;
+    padding: 0;
+}
+
+#container {
+    font-family: 'Poppins', Arial, sans-serif;
+    width: 80%;
+    margin: 20px auto 20px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+label, input, textarea {
+    font-family: 'Poppins', Arial, sans-serif;
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="text"], input[type="email"], input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc; /* Add borders for input elements */
+    border-radius: 5px; /* Add rounded corners for input elements */
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    height: 150px;
+    border: 1px solid #ccc; /* Add borders for textarea */
+    border-radius: 5px; /* Add rounded corners for textarea */
+}
+
+input[type="submit"] {
+    font-family: 'Poppins', Arial, sans-serif;
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px; /* Add rounded corners for the submit button */
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+table {
+    font-family: 'Poppins', Arial, sans-serif;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid #ccc;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+}
+
+
+
+
+
+
+
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 3;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 40px; /* Increase padding for a bigger box */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  text-align: center; /* Center the content horizontally */
+  width: 400px; /* Adjust the width as needed */
+}
+
+/* Style the modal content (e.g., h2 and input) */
+.modal-content {
+  margin-bottom: 20px; /* Add some spacing between elements */
+}
+
+/* Style the submit button */
+#submitContractAddress {
+  background-color: #4CAF50; /* Green background color */
+  color: #fff; /* White text color */
+  padding: 10px 20px; /* Add padding to make it bigger */
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s; /* Add hover effect */
+}
+
+#submitContractAddress:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+/* Overlay for the modal */
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+  z-index: 2;
+}
+
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.5.2/web3.min.js"></script>
+    <script src="auditor.js"></script>
+    <script src="contractABI.json"></script>
+</head>
+<body>
+    <div id="container">
+        <h1>Audit Review</h1>
+        
+        <!-- Display Government Information -->
+        <h2>Government Information</h2>
+        <table id="governmentInfo">
+            <!-- Government details will be dynamically added here -->
+        </table>
+
+        <!-- Display Contractor Information -->
+        <h2>Contractor Information</h2>
+        <table id="contractorInfo">
+            <!-- Contractor details will be dynamically added here -->
+        </table>
+
+        <!-- Audit Verification Form -->
+        <h2>Audit Verification</h2>
+        <form id="auditForm">
+            <label for="auditRemarks">Audit Remarks:</label>
+            <textarea name="auditRemarks" id="auditRemarks" required></textarea>
+
+            
+            <div>
+                <input type="submit" name="approve" value="Approve" style="display: inline-block; margin-right: 10px;">
+                <input type="submit" name="reject" value="Reject" style="display: inline-block;">
+            </div>
+        </form>
+    </div>
+
+
+
+
+
+    
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <h2>Join Audit</h2>
+            <!-- Add a textbox and submit button -->
+            <input type="text" id="yourwalletAddress" placeholder="Enter Your Wallet Address">
+            <input type="text" id="GovwalletAddress" placeholder="Enter Gov Agent's Wallet Address">
+            <input type="text" id="ContwalletAddress" placeholder="Enter Contractor's Wallet Address">
+            <input type="text" id="contractAddressInput" placeholder="Enter Contract Address">
+            <button id="submitContractAddress">Submit</button>
+        </div>
+    </div>
+    <div class="overlay" id="overlay"></div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="logo.png" alt="Logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#" id="createAudit">Join A  New Audit</a></li>
+                <li><a href="#">Log Out</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="container" id="auditContainer">
+            <!-- Audit cards will be dynamically added here -->
+        </div>
+    </main>
+    
+    <script src="script.js"></script>
+    <script>// Check if the user is authenticated and has the correct role
+        firebase.auth().onAuthStateChanged((user) => {
+            if (user) {
+                // User is signed in, check the user's role from Firestore
+                const db = firebase.firestore();
+        
+                db.collection('users').doc(user.uid).get()
+                    .then((doc) => {
+                        if (doc.exists) {
+                            const userData = doc.data();
+                            const userRole = userData.role;
+        
+                            // Check the user's role and allow access
+                            if (userRole !== 'Contractor', 'Auditor') {
+                                // Redirect or display an unauthorized message
+                                window.location.href = 'http://localhost:8080/unauth.html'; // Customize for unauthorized access
+                            }
+                        } else {
+                            // Handle document not found
+                            console.error('User document not found.');
+                        }
+                    })
+                    .catch((error) => {
+                        console.error(error);
+                    });
+            } else {
+                // User is not signed in, redirect to login page
+                window.location.href = 'login.html';
+            }
+        });
+</script> 
+</body>
+</html>
